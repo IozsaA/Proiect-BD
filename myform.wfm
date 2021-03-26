@@ -1,0 +1,26 @@
+** END HEADER -- do not remove this line
+//
+// Generated on 03/23/2021
+//
+parameter bModal
+local f
+f = new myformForm()
+if (bModal)
+   f.mdi = false // ensure not MDI
+   f.readModal()
+else
+   f.open()
+endif
+
+class myformForm of FORM
+   with (this)
+      height = 16.0
+      left = 30.0
+      top = 0.5
+      width = 40.0
+      text = ""
+   endwith
+
+
+endclass
+

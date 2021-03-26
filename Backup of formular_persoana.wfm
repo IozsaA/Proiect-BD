@@ -1,0 +1,162 @@
+** END HEADER -- do not remove this line
+//
+// Generated on 03/23/2021
+//
+parameter bModal
+local f
+f = new formular_persoanaForm()
+if (bModal)
+   f.mdi = false // ensure not MDI
+   f.readModal()
+else
+   f.open()
+endif
+
+class formular_persoanaForm of FORM
+   with (this)
+      height = 10.0
+      left = 80.5
+      top = 0.0
+      width = 34.0
+      text = "Fisa_traseu"
+      escExit = false
+      scrollBar = 2	// Auto
+   endwith
+
+   this.FISA_TRASEU1 = new QUERY(this)
+   with (this.FISA_TRASEU1)
+      left = 20.0
+      sql = 'select * from "D:\Facultate\BD\fisa_traseu.dbf"'
+      active = true
+   endwith
+
+   this.TEXTCOD_SOFER1 = new TEXT(this)
+   with (this.TEXTCOD_SOFER1)
+      height = 1.0
+      left = 1.0
+      top = 3.0
+      width = 14.0
+      wrap = false
+      alignVertical = 1	// Middle
+      alignHorizontal = 2	// Right
+      text = "Cod_sofer"
+   endwith
+
+   this.SPINBOXCOD_SOFER1 = new SPINBOX(this)
+   with (this.SPINBOXCOD_SOFER1)
+      dataLink = form.fisa_traseu1.rowset.fields["cod_sofer"]
+      height = 1.0
+      left = 16.0
+      top = 3.0
+      width = 14.0
+      rangeMax = 100
+      rangeMin = 1
+   endwith
+
+   this.TEXTCOD_RUTA1 = new TEXT(this)
+   with (this.TEXTCOD_RUTA1)
+      height = 1.0
+      left = 1.0
+      top = 4.0
+      width = 14.0
+      wrap = false
+      alignVertical = 1	// Middle
+      alignHorizontal = 2	// Right
+      text = "Cod_ruta"
+   endwith
+
+   this.ENTRYFIELDCOD_RUTA1 = new ENTRYFIELD(this)
+   with (this.ENTRYFIELDCOD_RUTA1)
+      dataLink = form.fisa_traseu1.rowset.fields["cod_ruta"]
+      height = 1.0
+      left = 16.0
+      top = 4.0
+      width = 12.0
+   endwith
+
+   this.TEXTDATA_START1 = new TEXT(this)
+   with (this.TEXTDATA_START1)
+      height = 1.0
+      left = 1.0
+      top = 5.0
+      width = 14.0
+      wrap = false
+      alignVertical = 1	// Middle
+      alignHorizontal = 2	// Right
+      text = "Data_start"
+   endwith
+
+   this.SPINBOXDATA_START1 = new SPINBOX(this)
+   with (this.SPINBOXDATA_START1)
+      dataLink = form.fisa_traseu1.rowset.fields["data_start"]
+      height = 1.0
+      left = 16.0
+      top = 5.0
+      width = 14.0
+      rangeMax = {07/01/2021}
+      rangeMin = {03/23/2021}
+   endwith
+
+   this.TEXTTARIF1 = new TEXT(this)
+   with (this.TEXTTARIF1)
+      height = 1.0
+      left = 1.0
+      top = 6.0
+      width = 14.0
+      wrap = false
+      alignVertical = 1	// Middle
+      alignHorizontal = 2	// Right
+      text = "tarif"
+   endwith
+
+   this.SPINBOXTARIF1 = new SPINBOX(this)
+   with (this.SPINBOXTARIF1)
+      dataLink = form.fisa_traseu1.rowset.fields["tarif"]
+      height = 1.0
+      left = 16.0
+      top = 6.0
+      width = 14.0
+      rangeMax = 100
+      rangeMin = 1
+   endwith
+
+   this.TEXTDATA_TERMINARE1 = new TEXT(this)
+   with (this.TEXTDATA_TERMINARE1)
+      height = 1.0
+      left = 1.0
+      top = 7.0
+      width = 14.0
+      wrap = false
+      alignVertical = 1	// Middle
+      alignHorizontal = 2	// Right
+      text = "Data_terminare"
+   endwith
+
+   this.SPINBOXDATA_TERMINARE1 = new SPINBOX(this)
+   with (this.SPINBOXDATA_TERMINARE1)
+      dataLink = form.fisa_traseu1.rowset.fields["data_terminare"]
+      height = 1.0
+      left = 16.0
+      top = 7.0
+      width = 14.0
+      rangeMax = {07/01/2021}
+      rangeMin = {03/23/2021}
+   endwith
+
+   this.TITLE1 = new TEXT(this)
+   with (this.TITLE1)
+      height = 2.0
+      left = 1.0
+      top = 0.0
+      width = 18.7143
+      variableHeight = true
+      colorNormal = "Highlight/BtnFace"
+      fontSize = 18.0
+      fontBold = true
+      text = "Fisa_traseu"
+   endwith
+
+   this.rowset = this.fisa_traseu1.rowset
+
+endclass
+

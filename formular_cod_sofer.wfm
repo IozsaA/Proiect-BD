@@ -1,0 +1,88 @@
+** END HEADER -- do not remove this line
+//
+// Generated on 03/23/2021
+//
+parameter bModal
+local f
+f = new formular_cod_soferForm()
+if (bModal)
+   f.mdi = false // ensure not MDI
+   f.readModal()
+else
+   f.open()
+endif
+
+class formular_cod_soferForm of FORM
+   with (this)
+      height = 9.0909
+      left = 44.4286
+      top = 1.8636
+      width = 38.7143
+      text = "Fisa_traseu"
+      escExit = false
+      scrollBar = 2	// Auto
+   endwith
+
+   this.FISA_TRASEU1 = new QUERY(this)
+   with (this.FISA_TRASEU1)
+      left = 20.0
+      width = 9.0
+      height = 1.0
+      sql = 'select * from "D:\Facultate\BD\fisa_traseu.dbf"'
+      active = true
+   endwith
+
+   this.TEXTCOD_SOFER1 = new TEXT(this)
+   with (this.TEXTCOD_SOFER1)
+      height = 1.0
+      left = 1.0
+      top = 3.0
+      width = 14.0
+      wrap = false
+      alignVertical = 1	// Middle
+      alignHorizontal = 2	// Right
+      text = "Codul soferului"
+   endwith
+
+   this.SPINBOXCOD_SOFER1 = new SPINBOX(this)
+   with (this.SPINBOXCOD_SOFER1)
+      dataLink = form.fisa_traseu1.rowset.fields["cod_sofer"]
+      height = 1.0
+      left = 16.0
+      top = 3.0
+      width = 14.0
+      rangeMax = 100
+      rangeMin = 1
+   endwith
+
+   this.TITLE1 = new TEXT(this)
+   with (this.TITLE1)
+      height = 2.7273
+      left = 1.0
+      top = 0.0
+      width = 29.0
+      variableHeight = true
+      colorNormal = "Highlight/BtnFace"
+      fontSize = 18.0
+      fontBold = true
+      text = "Cod Sofer"
+   endwith
+
+   this.PUSHBUTTON1 = new PUSHBUTTON(this)
+   with (this.PUSHBUTTON1)
+      onClick = class::PUSHBUTTON1_ONCLICK
+      height = 1.0909
+      left = 6.0
+      top = 5.0
+      width = 26.0
+      text = "afiseaza informatii sofer"
+   endwith
+
+   this.rowset = this.fisa_traseu1.rowset
+
+   function PUSHBUTTON1_onClick()
+	
+      return
+
+endclass
+
